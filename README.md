@@ -1,6 +1,6 @@
 # Proyecto de CRUD de Películas - FastAPI
 
-<img src="img/programate-academy.png" alt="Logo Programate">
+<img src="img/96da08ecd764e30c50f202c326e4f39f.jpeg" alt="Logo NezukoGOOD">
 
 ## Descripción
 
