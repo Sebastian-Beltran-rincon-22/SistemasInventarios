@@ -24,9 +24,9 @@ Base.metadata.create_all(bind=engine)
 
 @app.get('/',tags=['home'],status_code=200)
 def message():
-    return HTMLResponse('<h1>Hello World</h1>')
+    return HTMLResponse('<h1>hola a mi mundito</h1>')
 
 @app.get('/hola',tags=['home'])
 def hola():
-    return HTMLResponse('<h1>Hola Clase</h1>')
+    return HTMLResponse('<h1>Hola JaviSaludosJajaja</h1>')
 
