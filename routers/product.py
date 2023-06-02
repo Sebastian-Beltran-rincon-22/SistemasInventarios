@@ -25,14 +25,7 @@ def create_product(product:Product):
     ProductService(db).create_product(product)
     return JSONResponse (content={"menssage": "product created succesfully", "status_code": 201}, status_code= 201)
 
-# @product_router.put('/product{id}',tags=['product'])
-# def update_product(id:int,data:Product):
-#     db = Session()
-#     result = ProductService(db).get_for_id(id)
-#     if not result:
-#         return JSONResponse(content= {"message":"product don't found", "status_code":404})
-#     ProductService(db).update_for_product(data)
-#     return JSONResponse(content={"message":"product updated succesfully", "status_code":200}, status_code=200)
+
 @product_router.put('/product{id}', tags=['product'])
 def update_product(id: int, data: Product):
     db = Session()
