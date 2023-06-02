@@ -20,12 +20,12 @@ class SuppliesService():
         self.db.commit()
         return
     
-    def get_for_id_supplies(self, id:int):
+    def get_for_id(self, id:int):
         result = self.db.query(Suppliesmodel).filter(Suppliesmodel.id == id).first()
         return result
     
-    def update_supplies(self, data:Suppliesmodel):
-        supplies = self.db.query(Suppliesmodel).filter(Suppliesmodel.id == data.id).first()
+    def update_supplies(self,id:int, data:Supplies):
+        supplies = self.db.query(Suppliesmodel).filter(Suppliesmodel.id == id).first()
         supplies.supplier_id = data.supplier_id
         supplies.product_id = data.product_id 
         supplies.purchase_price = data.purchase_price

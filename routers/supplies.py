@@ -19,7 +19,7 @@ def get_supplies():
 @supplies_router.get('/supplies_for_id', tags = ['supplies'], status_code=200)
 def get_supplies_for_id(id:int):
     db = Session()
-    result = SuppliesService(db).get_for_id_supplies(id)
+    result = SuppliesService(db).get_for_id(id)
     return JSONResponse(content=jsonable_encoder(result), status_code= 200)
 
 @supplies_router.post('/supplies', tags=['supplies'], status_code= 200)
@@ -28,21 +28,20 @@ def create_supplies(supplies:Supplies):
     SuppliesService(db).create_supplies(supplies)
     return JSONResponse(content={"message":"supplies created", 'status_code': 200})
 
-
 @supplies_router.put('/supplies{id}', tags=['supplies'])
-def update_supplies(id:int,data:Supplies):
+def update_supplies(id: int, data: Supplies):
     db = Session()
-    result = SuppliesService(db).get_for_id_supplies(id)
+    result = SuppliesService(db).get_for_id(id)
     if not result:
-        return JSONResponse(content= {"message":"supplies don't found", "status_code":400})
-    SuppliesService(db).update_supplies(data)
-    return JSONResponse(content={"message":"supplies don't found", 'status_code': 200})
+        return JSONResponse(content={"message": "supplies not found", "status_code": 400})
+    SuppliesService(db).update_supplies(id,data)
+    return JSONResponse(content={"message": "supplies updated successfully", "status_code": 200})
 
 @supplies_router.delete('/supplies{id}', tags=['supplies'])
 def delete_supplies(id:int):
     db = Session()
-    result = SuppliesService(db).get_for_id_supplies(id)
+    result = SuppliesService(db).get_for_id(id)
     if not result:
         return JSONResponse(content= {"message":"supplies don't found", "status_code": 404})
     SuppliesService(db).delete_supplies(id)
-    return JSONResponse(content={"message":"supplies update succesfully"})
+    return JSONResponse(content={"message":"supplies update succesfully","status_code": 200})
