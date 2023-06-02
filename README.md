@@ -20,4 +20,6 @@ Este proyecto es un ejemplo de una API RESTful desarrollada con FastAPI que perm
 - FastAPI
 - Pydantic
 
+## Autores
 
+- [@sebastian beltran](https://github.com/Sebastian-Beltran-rincon-22)
