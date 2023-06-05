@@ -1,5 +1,4 @@
 from models.product import Product as ProductModel
-from schemas.product import Product
 
 class ProductService():
     def __init__(self,db) -> None:
