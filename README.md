@@ -1,6 +1,6 @@
 # Proyecto Inventory System - FastAPI
 
-<img src="img/96da08ecd764e30c50f202c326e4f39f.jpeg" alt="Logo NezukoGOOD">
+<img src="img/sebas1.png" alt="Logo NezukoGOOD">
 
 ## Descripción
 
